@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇7-11提貨注意事項</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 5vw;
+            font-size: 2.5vw;
+            line-height: 1.6;
+            box-sizing: border-box;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            margin-bottom: 1vh;
+        }
+        .notice {
+            margin-bottom: 2vh;
+        }
+        .checkbox {
+            margin-bottom: 2vh;
+            font-weight: bold;
+        }
+        #link {
+            display: none;
+        }
+        .red-text {
+            color: red;
+        }
+        .underline-text {
+            text-decoration: underline;
+        }
+        .red-underline-text {
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleLink() {
+            var checkBox = document.getElementById("confirm");
+            var link = document.getElementById("link");
+            if (checkBox.checked) {
+                link.style.display = "block";
+                link.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                link.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>選擇7-11提貨，以下注意事項</h1>
+    <div class="notice">
+        <ol>
+            <li>需填寫"<span class="red-text">與證件相符的提貨人姓名</span>"，不能填寫"<span class="red-text">公司戶戶名</span>"，因7-11取件需核對私人證件。<span class="red-text">**</span></li>
+            <li>要填寫正確提貨人手機號碼，格式應為<span class="red-text">09XXXXXXXX</span> (需要10碼)，不須空格貨特殊符號。</li>
+            <li>一定要填寫<span class="underline-text">7-11店號</span>及<span class="underline-text">店名</span>。<span class="red-text">**</span></li>
+            <li>一旦物流單號成立後，將無法更改提貨人名字、手機號碼以及收件門市 (<span class="red-underline-text">萊威客服也無法修改該筆資料</span>)。</li>
+        </ol>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="confirm" onclick="toggleLink()" style="transform: scale(1.5);">
+            <b>我已經明白上方注意事項</b>
+        </label>
+    </div>
+    <div id="link">
+        <a href="https://emap.pcsc.com.tw/" target="_blank">前往 7-11 店面搜尋</a>
+    </div>
+</body>
+</html>
